@@ -1,3 +1,6 @@
+<%# herb:slots server %>
+<%# herb:state (composing: false) %>
+
 <h1>Messages</h1>
 
 <ul>
@@ -6,3 +9,13 @@
     <li><strong><%= message.author %></strong> <%= message.body %></li>
   <% end %>
 </ul>
+
+<button data-herb-toggle="composing">New message</button>
+
+<% if composing %>
+  <form action="<%= messages_path %>" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input name="message[body]" autocomplete="off">
+    <button>Send</button>
+  </form>
+<% end %>

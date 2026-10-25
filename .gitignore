@@ -36,3 +36,6 @@
 # Ignore node modules.
 /node_modules
 
+# Ignore macOS Finder metadata.
+.DS_Store
+

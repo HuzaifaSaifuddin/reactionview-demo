@@ -12,7 +12,7 @@ ReActionView.configure do |config|
   # config.project_path = ENV.fetch('PROJECT_PATH', Rails.root.to_s)
 
   # Validation mode (:raise, :overlay, or :none) — defaults to :raise in test, :overlay otherwise
-  # config.validation_mode = :overlay
+  config.validation_mode = :overlay
 
   # How to handle templates that come from gems (:fallback, :skip, or :compile), defaults to :fallback
   # config.external_template_mode = :skip

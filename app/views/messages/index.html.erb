@@ -1,10 +1,17 @@
 <%# herb:slots server %>
-<%# herb:state (composing: false) %>
+<%# herb:state (composing: false, order: "oldest") %>
 
 <h1>Messages</h1>
 
+<select data-herb-set="order=$value">
+  <option value="oldest">Oldest first</option>
+  <option value="newest">Newest first</option>
+</select>
+
+<p><% if order == "newest" %>Newest messages first<% else %>Oldest messages first<% end %></p>
+
 <ul>
-  <% @messages.each do |message| %>
+  <% messages_in_order(@messages, order).each do |message| %>
     <%# herb:key message.id %>
     <li><strong><%= message.author %></strong> <%= message.body %></li>
   <% end %>

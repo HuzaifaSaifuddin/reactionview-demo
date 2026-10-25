@@ -1,0 +1,8 @@
+<h1>Messages</h1>
+
+<ul>
+  <% @messages.each do |message| %>
+    <%# herb:key message.id %>
+    <li><strong><%= message.author %></strong> <%= message.body %></li>
+  <% end %>
+</ul>
